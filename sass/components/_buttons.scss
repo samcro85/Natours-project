@@ -1,0 +1,61 @@
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all 250ms;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      /* Quando facciamo l'hover sul bottone creiamo uno stile all'elemento after */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* Abbinato alla proprietà transition crea una sorta di fading */
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    /* Dimezziamo l'ombra per dare l'impressione che il bottone si allontani */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    color: $color-grey-dark;
+    background-color: white;
+  }
+
+  &--animated {
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.75s;
+
+    /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
+    animation-fill-mode: backwards;
+  }
+
+  &::after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* Per farlo apparire dietro lo posizioniamo assolutamente e lo z-index -1*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    background-color: white;
+  }
+}

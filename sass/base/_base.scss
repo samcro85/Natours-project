@@ -1,0 +1,18 @@
+/* GLOBAL RESET AGGIORNATO */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  /* Settando la proprietà su inherit, questo valore automaticamente verrà settato per la proprietà 'box-sizing' di tutti gli elementi. Nel body settiamo il valore della proprietà che verrà ereditata da tutti gli elementi. */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
+  box-sizing: border-box;
+}
