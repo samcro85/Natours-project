@@ -1,0 +1,46 @@
+.row {
+  // Questa è una misura standard
+  max-width: $grid-width;
+  background-color: #eee;
+  margin: 0 auto;
+  display: flow-root;
+
+  &:not(:last-child) {
+    margin-bottom: $vertical-gap;
+  }
+
+  //   Il '^=' significa che il valore della classe devee iniziare con 'col-'
+  [class^="col-"] {
+    background-color: orangered;
+    color: white;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $horizontal-gap;
+    }
+  }
+
+  .col-1-of-2 {
+    // Per utilizzare le variabili devono essere messe dentro '#{}
+    width: calc((100% - #{$horizontal-gap}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - #{$horizontal-gap * 2}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(((100% - #{2 * $horizontal-gap}) / 3) * 2 + #{$horizontal-gap});
+  }
+  .col-1-of-4 {
+    width: calc((100% - #{$horizontal-gap * 3}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(((100% - #{$horizontal-gap * 3}) / 4) * 2 + #{$horizontal-gap});
+  }
+
+  .col-3-of-4 {
+    width: calc(((100% - #{$horizontal-gap * 3}) / 4) * 3 + #{$horizontal-gap*2});
+  }
+}
