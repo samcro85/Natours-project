@@ -14,4 +14,11 @@
     url(../img/nat-4.jpg);
   background-size: cover;
   background-position: top;
+margin-top: -15rem;
+  transform: skewY(-7deg);
+
+  // Questo selezione il figlio diretto e annulla l'effetto di skew riportandolo alla condizione iniziale.
+  & > * {
+    transform: skewY(7deg);
+  }
 }
