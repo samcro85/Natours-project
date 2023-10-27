@@ -1,2 +1,4 @@
 node_modules/
 appunti.txt 
+.DS_Store
+css/.DS_Store
