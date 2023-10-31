@@ -5,7 +5,7 @@
 }
 
 .feature-section {
-  padding: 20rem 0;
+  padding: 25rem 0;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -13,12 +13,17 @@
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
-  background-position: top;
-margin-top: -15rem;
+  margin-top: -15rem;
   transform: skewY(-7deg);
 
   // Questo selezione il figlio diretto e annulla l'effetto di skew riportandolo alla condizione iniziale.
   & > * {
     transform: skewY(7deg);
   }
+}
+
+.tours-section {
+  background-color: $color-grey-light-1;
+  padding: 30rem 0 50rem 0;
+  margin-top: -14rem;
 }
