@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -23,8 +24,10 @@
     }
   }
 
-  &:active {
-    transform: translateY(-0.1rem);
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
     /* Dimezziamo l'ombra per dare l'impressione che il bottone si allontani */
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
@@ -32,16 +35,19 @@
   &--white {
     color: $color-grey-dark;
     background-color: white;
+
+    &::after {
+      background-color: $color-white;
+    }
   }
 
-  &--animated {
-    animation-name: moveInBottom;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-delay: 0.75s;
+  &--green {
+    color: white;
+    background-color: $color-primary;
 
-    /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
-    animation-fill-mode: backwards;
+    &::after {
+      background-color: $color-primary;
+    }
   }
 
   &::after {
@@ -56,7 +62,16 @@
     left: 0;
     z-index: -1;
     transition: all 0.4s;
-    background-color: white;
+  }
+
+  &--animated {
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.75s;
+
+    /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
+    animation-fill-mode: backwards;
   }
 }
 

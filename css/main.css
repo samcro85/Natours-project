@@ -1,20 +1,4 @@
 @charset "UTF-8";
-/* GLOBAL RESET AGGIORNATO */
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  /* Settando la proprietà su inherit, questo valore automaticamente verrà settato per la proprietà 'box-sizing' di tutti gli elementi. Nel body settiamo il valore della proprietà che verrà ereditata da tutti gli elementi. */
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
-  box-sizing: border-box; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -38,6 +22,22 @@ body {
   100% {
     opacity: 1;
     transform: translateX(0); } }
+
+/* GLOBAL RESET AGGIORNATO */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  /* Settando la proprietà su inherit, questo valore automaticamente verrà settato per la proprietà 'box-sizing' di tutti gli elementi. Nel body settiamo il valore della proprietà che verrà ereditata da tutti gli elementi. */
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
+  box-sizing: border-box; }
 
 body {
   /* Tutte queste proprietà indicate nel body verranno ereditate nel documento */
@@ -102,13 +102,19 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-top-huge {
+  margin-top: 10rem; }
+
 .u-margin-bottom-md {
   margin-bottom: 4rem; }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -127,22 +133,23 @@ body {
     /* Abbinato alla proprietà transition crea una sorta di fading */
     opacity: 0; }
 
-.btn:active {
-  transform: translateY(-0.1rem);
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
   /* Dimezziamo l'ombra per dare l'impressione che il bottone si allontani */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   color: #777;
   background-color: white; }
+  .btn--white::after {
+    background-color: #fff; }
 
-.btn--animated {
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.75s;
-  /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
-  animation-fill-mode: backwards; }
+.btn--green {
+  color: white;
+  background-color: #55c57a; }
+  .btn--green::after {
+    background-color: #55c57a; }
 
 .btn::after {
   display: inline-block;
@@ -155,8 +162,15 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s;
-  background-color: white; }
+  transition: all 0.4s; }
+
+.btn--animated {
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.75s;
+  /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
+  animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
@@ -176,50 +190,6 @@ body {
 .btn-text:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
-
-.feature-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem;
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: all 250ms; }
-  .feature-box__icon {
-    font-size: 6rem;
-    margin-bottom: 0.5rem;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; }
-  .feature-box:hover {
-    transform: translateY(-1.5rem) scale(1.03); }
-
-.composition {
-  position: relative; }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    position: absolute;
-    z-index: 10;
-    transition: all 200ms;
-    outline-offset: 2rem; }
-    .composition__photo--1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--3 {
-      left: 20%;
-      top: 10rem; }
-    .composition__photo:hover {
-      outline: 1.5rem solid #55c57a;
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
 
 .card {
   height: 52rem;
@@ -279,6 +249,10 @@ body {
     box-decoration-break: clone; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -291,6 +265,66 @@ body {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    color: white;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all 200ms;
+    outline-offset: 2rem; }
+    .composition__photo--1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 250ms; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
 
 .row {
   max-width: 114rem;
@@ -352,5 +386,5 @@ body {
 
 .tours-section {
   background-color: #f7f7f7;
-  padding: 30rem 0 50rem 0;
+  padding: 30rem 0 15rem 0;
   margin-top: -14rem; }
