@@ -1,95 +1,4 @@
 @charset "UTF-8";
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-html {
-  font-size: 62.5%;
-}
-
-/* GLOBAL RESET AGGIORNATO */
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  /* Settando la proprietà su inherit, questo valore automaticamente verrà settato per la proprietà 'box-sizing' di tutti gli elementi. Nel body settiamo il valore della proprietà che verrà ereditata da tutti gli elementi. */
-  box-sizing: inherit;
-}
-
-/* Tutte queste proprietà indicate nel body verranno ereditate nel documento */
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
-  box-sizing: border-box;
-}
-
-/* HEADER */
-.header {
-  height: 95vh;
-  position: relative;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.primary-heading {
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-  /* Questa proprietà viene usata come hack perchè in alcune animazioni, come translate, avviene una sorta di balzo verso l'alto. */
-  /* backface-visibility: hidden; */
-}
-
-.primary-heading--title {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* animation-delay: 3s;  L'animazione partirà dopo 3 secondi 
-    animation-iteration-count: 3; L'animazione verrà ripetuta 3 volte 
-    animation-timing-function: ease-out; */
-}
-
-.primary-heading--subtitle {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-}
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -120,8 +29,116 @@ body {
     transform: translateX(0);
   }
 }
-.btn:link,
-.btn:visited {
+/* GLOBAL RESET AGGIORNATO */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  /* Settando la proprietà su inherit, questo valore automaticamente verrà settato per la proprietà 'box-sizing' di tutti gli elementi. Nel body settiamo il valore della proprietà che verrà ereditata da tutti gli elementi. */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
+  box-sizing: border-box;
+}
+
+body {
+  /* Tutte queste proprietà indicate nel body verranno ereditate nel documento */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.primary-heading {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  /* Questa proprietà viene usata come hack perchè in alcune animazioni, come translate, avviene una sorta di balzo verso l'alto. */
+  /* backface-visibility: hidden; */
+}
+.primary-heading--title {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  /* animation-delay: 3s;  L'animazione partirà dopo 3 secondi 
+      animation-iteration-count: 3; L'animazione verrà ripetuta 3 volte 
+      animation-timing-function: ease-out; */
+}
+.primary-heading--subtitle {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+}
+
+.secondary-heading {
+  display: inline-block;
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 250ms;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.secondary-heading:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.tertiary-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
+.u-margin-bottom-md {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem;
+}
+
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -131,32 +148,36 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
-.btn:active {
-  transform: translateY(-0.1rem);
+.btn:hover::after {
+  /* Quando facciamo l'hover sul bottone creiamo uno stile all'elemento after */
+  transform: scaleX(1.4) scaleY(1.6);
+  /* Abbinato alla proprietà transition crea una sorta di fading */
+  opacity: 0;
+}
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
   /* Dimezziamo l'ombra per dare l'impressione che il bottone si allontani */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn--white {
-  color: var(--grey-text);
+  color: #777;
   background-color: white;
 }
-
-.btn--animated {
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.75s;
-  /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
-  animation-fill-mode: backwards;
+.btn--white::after {
+  background-color: #fff;
 }
-
+.btn--green {
+  color: white;
+  background-color: #55c57a;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
 .btn::after {
   display: inline-block;
   content: "";
@@ -169,15 +190,287 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-  background-color: white;
+}
+.btn--animated {
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.75s;
+  /* Questa proprietà applica lo stile del keyframe iniziale durante il periodo di delay dell'animazione*/
+  animation-fill-mode: backwards;
 }
 
-/* .btn-white::after {
-    background-color: white;
-  } */
-/* Quando facciamo l'hover sul bottone creiamo uno stile all'elemento after */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* Abbinato alla proprietà transition crea una sorta di fading */
-  opacity: 0;
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 250ms;
+}
+.btn-text:hover {
+  background-color: #55c57a;
+  color: white;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn-text:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card {
+  height: 52rem;
+  perspective: 150rem;
+  position: relative;
+}
+.card__side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-size: 2rem;
+  width: 100%;
+  height: 52rem;
+  transition: all 800ms ease;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+}
+.card__side--front {
+  background-color: white;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+}
+.card__side--back-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.card__side--back-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+.card__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../../img/nat-5.jpg);
+}
+.card__picture--2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../../img/nat-6.jpg);
+}
+.card__picture--3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../../img/nat-7.jpg);
+}
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  text-align: right;
+  width: 75%;
+}
+.card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
+}
+.card__details {
+  padding: 3rem;
+}
+.card__details ul {
+  margin: 0 auto;
+  list-style: none;
+  width: 80%;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.card__price-box {
+  color: white;
+  margin-bottom: 8rem;
+}
+.card__price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 10;
+  transition: all 200ms;
+  outline-offset: 2rem;
+}
+.composition__photo--1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--3 {
+  left: 20%;
+  top: 10rem;
+}
+.composition__photo:hover {
+  outline: 1.5rem solid #55c57a;
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 250ms;
+}
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  display: flow-root;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 12rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(((100% - 12rem) / 3) * 2 + 6rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 18rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(((100% - 18rem) / 4) * 2 + 6rem);
+}
+.row .col-3-of-4 {
+  width: calc(
+      ((100% - 18rem) / 4) * 3 + 12rem
+    );
+}
+
+/* HEADER */
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.about-section {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.feature-section {
+  padding: 25rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  margin-top: -15rem;
+  transform: skewY(-7deg);
+}
+.feature-section > * {
+  transform: skewY(7deg);
+}
+
+.tours-section {
+  background-color: #f7f7f7;
+  padding: 30rem 0 15rem 0;
+  margin-top: -14rem;
 }/*# sourceMappingURL=main.min.css.map */
