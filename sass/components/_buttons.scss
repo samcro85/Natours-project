@@ -10,6 +10,10 @@
     transition: all 250ms;
     position: relative;
     font-size: $default-font-size;
+
+    // For button element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
