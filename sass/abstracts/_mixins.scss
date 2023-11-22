@@ -1,6 +1,57 @@
-@mixin center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/* 
+0 -600px - Phone
+601 - 900 - Tablet portrait 
+901 - 1200 - Tablet Landscape
+1201 - 1799 - Normal Desktop
+1800+  - Big Desktop
+*/
+
+@mixin responsive-phone {
+  @media screen and (max-width: 600px) {
+    // @content permette di inserire successivamente il codice direttamente nel selettore dove verrà messo il mixin
+    @content;
+  }
+}
+
+/* 
+breakpoint argument choices: 
+phone
+tab-portrait
+tab-landscape
+desktop
+huge-desktop
+*/
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-portrait {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-landscape {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
 }

@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/* 
+0 -600px - Phone
+601 - 900 - Tablet portrait 
+901 - 1200 - Tablet Landscape
+1201 - 1799 - Normal Desktop
+1800+  - Big Desktop
+*/
+/* 
+breakpoint argument choices: 
+phone
+tab-portrait
+tab-landscape
+desktop
+huge-desktop
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -33,7 +48,22 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* @include responsive-phone {
+    font-size: 50%;
+  }*/ }
+  @media screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media screen and (max-width: 56.25em) {
+    html {
+      font-size: 60%; } }
+  @media screen and (max-width: 75em) {
+    html {
+      font-size: 70%; } }
+  @media screen and (min-width: 112.5em) {
+    html {
+      font-size: 80%; } }
 
 body {
   /* Questa proprietà verrà ereditata da tutti gli elementi della pagina */
