@@ -13,6 +13,8 @@
 901 - 1200 - Tablet Landscape
 1201 - 1799 - Normal Desktop
 1800+  - Big Desktop
+
+ORDER: Base + typography > general layout > page layout > components 
 */
 
 @mixin responsive-phone {
