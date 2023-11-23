@@ -7,6 +7,14 @@
 
   &:not(:last-child) {
     margin-bottom: $vertical-gap;
+
+    @include responsive(tab-portrait) {
+      margin-bottom: $vertical-gap--small;
+    }
+  }
+
+  @include responsive(tab-portrait) {
+    max-width: 50rem;
   }
 
   //   Il '^=' significa che il valore della classe devee iniziare con 'col-'
@@ -15,6 +23,15 @@
 
     &:not(:last-child) {
       margin-right: $horizontal-gap;
+
+      @include responsive(tab-portrait) {
+        margin-right: 0;
+        margin-bottom: $vertical-gap--small;
+      }
+    }
+
+    @include responsive(tab-portrait) {
+      width: 100% !important;
     }
   }
 

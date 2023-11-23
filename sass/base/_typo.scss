@@ -63,8 +63,8 @@ body {
   background-clip: text;
   color: transparent;
 
-  @include responsive(tap-portrait) {
-    font-size: 2rem;
+  @include responsive(tab-portrait) {
+    font-size: 2.5rem;
   }
 
   @include responsive(phone) {
