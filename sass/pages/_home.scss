@@ -2,10 +2,14 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include responsive(tab-portrait) {
+    padding: 20rem 0;
+  }
 }
 
 .feature-section {
-  padding: 25rem 0;
+  padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -19,18 +23,38 @@
   // Questo selezione il figlio diretto e annulla l'effetto di skew riportandolo alla condizione iniziale.
   & > * {
     transform: skewY(7deg);
+    @include responsive(tab-portrait) {
+      
+    transform: skewY(4deg);
+  
+    }
+    
+  }
+
+  @include responsive(tab-portrait) {
+    padding: 10rem 0;
+  transform: skewY(-4deg);
+
   }
 }
 
 .tours-section {
   background-color: $color-grey-light-1;
-  padding: 30rem 0 15rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -14rem;
+
+  @include responsive(tab-portrait) {
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 .stories-section {
   position: relative;
   padding: 15rem 0;
+
+  @include responsive(tab-portrait) {
+    padding: 10rem 0;
+  }
 }
 
 .booking-section {
@@ -40,6 +64,9 @@
     $color-primary-light,
     $color-primary-dark
   );
+  @include responsive(tab-portrait) {
+    padding: 10rem 0;
+  }
 }
 
 .book {
