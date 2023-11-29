@@ -148,7 +148,7 @@ body {
   margin-bottom: 8rem !important; }
   @media screen and (max-width: 56.25em) {
     .u-margin-bottom-big {
-      margin-bottom: 5rem; } }
+      margin-bottom: 5rem !important; } }
 
 .u-margin-top-big {
   margin-top: 8rem !important; }
@@ -160,10 +160,13 @@ body {
   margin-bottom: 4rem !important; }
   @media screen and (max-width: 56.25em) {
     .u-margin-bottom-md {
-      margin-bottom: 3rem; } }
+      margin-bottom: 2rem !important; } }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem !important; }
+  @media screen and (max-width: 56.25em) {
+    .u-margin-bottom-small {
+      margin-bottom: 1rem !important; } }
 
 .btn, .btn:link, .btn:visited {
   display: inline-block;
@@ -530,11 +533,14 @@ body {
     display: inline-block;
     transition: all 0.2s;
     line-height: 1; }
+    @media screen and (max-width: 56.25em) {
+      .popup__close:link, .popup__close:visited {
+        top: 2rem; } }
   .popup__close:hover, .popup__close:active {
     color: #55c57a; }
   .popup__content {
     width: 75%;
-    display: table;
+    display: flex;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
     position: absolute;
@@ -547,16 +553,33 @@ body {
     transform: translate(-50%, -50%) scale(0.5);
     transition: all 0.3s 0.2s; }
   .popup__left {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
     width: 33.33333333%; }
+    @media screen and (max-width: 75em) {
+      .popup__left {
+        justify-content: space-evenly; } }
+    @media screen and (max-width: 37.5em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 66.66666667%;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media screen and (max-width: 56.25em) {
+      .popup__right {
+        padding: 1.5rem 2.5rem; } }
+    @media screen and (max-width: 37.5em) {
+      .popup__right {
+        width: 100%; } }
   .popup__img {
     display: block;
-    width: 100%; }
+    width: 95%; }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -564,6 +587,10 @@ body {
     column-gap: 4rem;
     column-rule: 1px solid #eee;
     hyphens: auto; }
+    @media screen and (max-width: 56.25em) {
+      .popup__text {
+        margin-bottom: 2rem;
+        column-count: 1; } }
   .popup:target .popup__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1); }
@@ -891,9 +918,6 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
-  @media screen and (max-width: 56.25em) {
-    .about-section {
-      padding: 20rem 0; } }
 
 .feature-section {
   padding: 20rem 0;
