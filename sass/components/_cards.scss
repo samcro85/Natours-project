@@ -80,7 +80,25 @@
           $color-secondary-light,
           $color-secondary-dark
         ),
-        url(../../img/nat-5.jpg);
+        url(../../img/nat-5-sm.jpg);
+
+      @media (min-width: 56.25em) and (min-resolution: 192dpi) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+          ),
+          url(../../img/nat-5-md.jpg);
+      }
+
+      @media (min-width: 112.5em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+          ),
+          url(../../img/nat-5.jpg);
+      }
     }
 
     &--2 {
@@ -89,7 +107,25 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url(../../img/nat-6.jpg);
+        url(../../img/nat-6-sm.jpg);
+
+      @media (min-width: 56.25em) and (min-resolution: 192dpi) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          ),
+          url(../../img/nat-6-md.jpg);
+      }
+
+      @media (min-width: 112.5em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          ),
+          url(../../img/nat-6.jpg);
+      }
     }
 
     &--3 {
@@ -98,7 +134,24 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url(../../img/nat-7.jpg);
+        url(../../img/nat-7-sm.jpg);
+      @media (min-width: 56.25em) and (min-resolution: 192dpi) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          ),
+          url(../../img/nat-7-md.jpg);
+      }
+
+      @media (min-width: 112.5em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          ),
+          url(../../img/nat-7.jpg);
+      }
     }
   }
 
@@ -197,11 +250,10 @@
     background-color: $color-white;
     box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.15);
 
-
     &__side {
       position: relative;
       height: auto;
-      box-shadow: none ;
+      box-shadow: none;
 
       &--back {
         //   Essendo la parte posteriore essa parte già ruotata di 180°
